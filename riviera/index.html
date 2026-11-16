@@ -84,6 +84,11 @@
   .links a[aria-current] { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 6px; }
   .chip { display: inline-flex; align-items: center; gap: 8px; margin-left: 4px; font-size: 12px; line-height: 1.33; letter-spacing: 0; color: var(--text-2); white-space: nowrap; }
   .chip::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--text-3); }
+  .links a.navcta { position: relative; margin-left: 4px; min-height: 30px; padding: 0 14px; border-radius: 999px; background: var(--pill); color: #fff; font-size: 12px; line-height: 1.33; white-space: nowrap; }
+  .links a.navcta::after { content: ""; position: absolute; inset: -7px -4px; }
+  .links a.navcta:hover { background: var(--pill-hover); color: #fff; text-decoration: none; }
+  .hero .fine.tf { margin-top: 14px; }
+  .get .get-cta { margin-top: 28px; }
   .explore summary { display: inline-flex; align-items: center; min-width: 44px; min-height: 44px; list-style: none; cursor: pointer; border-radius: 999px; }
   .explore summary::-webkit-details-marker { display: none; }
   .explore summary span { display: inline-flex; align-items: center; gap: 8px; height: 30px; padding: 0 14px;
@@ -423,8 +428,8 @@
       <a href="#privacy">Privacy</a>
       <a href="#faq">Questions</a>
       <a href="#contact">Contact</a>
-      <!-- RELEASE-DAY -->
-      <span class="chip">Coming soon</span>
+      <!-- RELEASE-DAY: TestFlight link until the App Store version is live -->
+      <a class="navcta" href="https://testflight.apple.com/join/4y5D8VWh" rel="noopener">Join the beta</a>
     </nav>
     <details class="explore">
       <summary><span>Explore</span></summary>
@@ -435,8 +440,9 @@
         <a href="#privacy">Privacy</a>
         <a href="#faq">Questions</a>
         <a href="#contact">Contact</a>
-        <!-- RELEASE-DAY -->
-        <p>Coming soon to the App Store</p>
+        <!-- RELEASE-DAY: TestFlight link until the App Store version is live -->
+        <a href="https://testflight.apple.com/join/4y5D8VWh" rel="noopener">Install with TestFlight</a>
+        <p>App Store release coming soon</p>
       </nav>
     </details>
   </div>
@@ -446,14 +452,14 @@
 
   <section id="overview" class="hero center" aria-labelledby="hero-h">
     <div class="w t center">
-      <p class="eyebrow">Riviera</p>
       <h1 id="hero-h">Your car,<br>at a glance.</h1>
       <p class="lead">The latest fuel or battery level, range and parking location, as Renault reports them. <span class="nb">Fill-ups</span>, services, lease and deadlines, in one iPhone app.</p>
       <div class="cta">
-        <a class="pill" href="#features">See it in use</a>
-        <!-- RELEASE-DAY -->
-        <p class="status">Coming soon to the App Store</p>
+        <!-- RELEASE-DAY: swap for the App Store badge once the app is live -->
+        <a class="pill" href="https://testflight.apple.com/join/4y5D8VWh" rel="noopener">Install with TestFlight</a>
+        <a class="chev" href="#features">See it in use</a>
       </div>
+      <p class="fine tf">A beta, through Apple’s free TestFlight app. The App Store release is coming soon.</p>
       <p class="fine"><strong>Independent and unofficial.</strong> Riviera is not affiliated with, endorsed by, or sponsored by Renault s.a.s. For iPhone with iOS 18 or later. Free, with no ads.</p>
     </div>
     <figure class="hero-media">
@@ -510,8 +516,8 @@
         <div class="chapter">
           <div class="step" id="ch-controls">
             <p class="kicker">Controls</p>
-            <h3>Controls, where your car allows them.</h3>
-            <p class="txt"><strong>Sound the horn and flash the lights.</strong> Riviera cannot lock or unlock your car: Renault’s service has no such command, so it only shows the last lock status your car reports, with the time of that report.</p>
+            <h3>Horn and lights, from your phone.</h3>
+            <p class="txt"><strong>Sound the horn or flash the lights with a tap.</strong> The door lock card shows the last status your car reported, with the time of that report.</p>
             <details class="more">
               <summary>Which cars accept horn and lights?</summary>
               <p>Horn and lights work mainly on cars with OpenR Link, the Android-based touchscreen system in newer Renaults (about 2022 onward), such as the Austral and Mégane E-Tech. Most older Easy Link and R-Link 2 cars refuse the command, and Riviera then says so. Settings › Help &amp; Support › Supported Vehicles shows the system for each model.</p>
@@ -729,9 +735,10 @@
     <div class="w t center rv">
       <img src="img/icon-180.png" width="120" height="120" loading="lazy" decoding="async" alt="">
       <h2 id="get-h">Riviera</h2>
-      <!-- RELEASE-DAY -->
-      <p class="status">Coming soon to the App Store</p>
-      <p class="req">For iPhone with iOS 18 or later. Free, with no ads.</p>
+      <!-- RELEASE-DAY: swap for the App Store badge once the app is live -->
+      <p class="get-cta"><a class="pill" href="https://testflight.apple.com/join/4y5D8VWh" rel="noopener">Install with TestFlight</a></p>
+      <p class="status">App Store release coming soon</p>
+      <p class="req">For iPhone with iOS 18 or later. Free, with no ads. The beta runs through Apple’s free TestFlight app.</p>
       <p class="fine">Independent and unofficial. Not affiliated with, endorsed by, or sponsored by Renault s.a.s.</p>
     </div>
   </section>
@@ -753,7 +760,7 @@
       <li id="fn4">Elsewhere you see station locations without prices; Italy’s price files are read too, but not verified yet.</li>
     </ol>
     <div class="legal">
-      <p>Riviera is an independent app. It is not affiliated with, endorsed by, or sponsored by Renault s.a.s. The sample car in the screenshots is shown with a picture of a Renault Austral. Renault and Austral are trademarks of Renault s.a.s., used here only to say which cars Riviera works with. Other product and company names are trademarks of their owners. Apple, iPhone, iCloud, Apple TV, Apple Maps, Shortcuts and Siri are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc. Riviera is not made by, affiliated with, or endorsed by Apple Inc.</p>
+      <p>Riviera is an independent app. It is not affiliated with, endorsed by, or sponsored by Renault s.a.s. The sample car in the screenshots is shown with a picture of a Renault Austral. Renault and Austral are trademarks of Renault s.a.s., used here only to say which cars Riviera works with. Other product and company names are trademarks of their owners. Apple, iPhone, iCloud, Apple TV, Apple Maps, Shortcuts, Siri and TestFlight are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc. Riviera is not made by, affiliated with, or endorsed by Apple Inc.</p>
       <p>Data credits: fuel prices in Germany from <a href="https://creativecommons.tankerkoenig.de">Tankerkönig</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>) when you add your own free key; in Romania from <a href="https://monitorulpreturilor.info/">Monitorul Prețurilor Carburanților</a> (Consiliul Concurenței); in France from prix-carburants.gouv.fr (Ministère de l’Économie, Licence Ouverte 2.0); in Spain from geoportalgasolineras.es (Ministerio para la Transición Ecológica); in Austria from the E-Control Spritpreisrechner; in Italy from the Osservatorio Prezzi Carburanti (Ministero delle Imprese e del Made in Italy). Charger data from <a href="https://openchargemap.org">Open Charge Map</a> contributors (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>). Station, charger and dealer locations © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> (ODbL). Weather data by <a href="https://open-meteo.com">Open-Meteo.com</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>). Maps in the app: Apple Maps.</p>
       <p>© 2026 Ionuț Andrei Paraschiv · Last updated 16 November 2026</p>
     </div>
