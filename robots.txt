@@ -1,3 +1,7 @@
+User-agent: Googlebot-Image
+Disallow: /riviera/img/
+
 User-agent: *
 Allow: /
+
 Sitemap: https://ineedaweapon.github.io/sitemap.xml
