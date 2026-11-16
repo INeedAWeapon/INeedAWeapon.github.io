@@ -125,7 +125,6 @@
   .phone .screen img { display: block; width: 100%; height: 100%; object-fit: cover; }
   .phone .island { position: absolute; left: 50%; top: calc(var(--pw) * .0535); width: calc(var(--pw) * .2955); height: calc(var(--pw) * .0868);
     border-radius: 999px; background: #000; transform: translateX(-50%); }
-  .phone figcaption { margin-top: 20px; font-size: 12px; line-height: 1.33; letter-spacing: 0; color: var(--text-3); text-align: center; }
 
   /* hero */
   .hero { padding: 40px 0 0; }
@@ -144,7 +143,7 @@
   .crop { position: relative; height: calc(var(--pw) * 1.764); padding-top: calc(var(--pw) * .12); overflow: hidden; overflow: clip;
     -webkit-mask-image: linear-gradient(#000 82%, transparent); mask-image: linear-gradient(#000 82%, transparent); }
   .crop .phone { margin-inline: auto; }
-  .hero-media > figcaption { position: relative; padding: 16px 0 56px; font-size: 14px; line-height: 1.43; letter-spacing: 0; color: var(--text-2); }
+  .hero-media { padding-bottom: 56px; }
 
   /* statement + stats */
   .statement { background: var(--ink); }
@@ -334,7 +333,7 @@
   @media screen and (min-width: 900px) and (min-height: 600px) {
     .shead.center { text-align: left; }
     .shead.center > p { margin-inline: 0; }
-    .story { --pw: min(380px, calc((100vh - 148px) / 2.108)); --stage-h: calc(var(--pw) * 2.108 + 40px);
+    .story { --pw: min(380px, calc((100vh - 148px) / 2.108)); --stage-h: calc(var(--pw) * 2.108);
              --pin-top: calc(52px + (100vh - 52px - var(--stage-h)) / 2); margin-top: 72px; }
     @supports (height: 100svh) {
       .story { --pw: min(380px, calc((100svh - 148px) / 2.108)); --pin-top: calc(52px + (100svh - 52px - var(--stage-h)) / 2); }
@@ -358,7 +357,6 @@
     .pin .chapter:nth-child(7) .step { grid-row: 7; }
     .pin .story .phone { grid-column: 2; grid-row: 1 / -1; }
     .pin .chapter:not(:first-child) .phone .body, .pin .chapter:not(:first-child) .phone .screen { background: transparent; box-shadow: none; }
-    .pin .chapter:not(:first-child) .phone figcaption { visibility: hidden; }
     .pin .chapter:not(:first-child) .phone img { opacity: 0; transition: opacity .5s var(--ease); }
     .pin .chapter:not(:first-child) .phone.is-on img, .pin .chapter:not(:first-child) .phone.was-on img { opacity: 1; }
     .pin .chapter:not(:first-child) .phone.was-on { z-index: 1; }
@@ -416,7 +414,7 @@
 </style>
 </head>
 <body>
-<a class="skip" href="#main">Skip to the content</a>
+<a class="skip" href="#main">Skip to content</a>
 
 <header class="localnav">
   <div class="w">
@@ -459,8 +457,8 @@
         <a class="pill" href="https://testflight.apple.com/join/4y5D8VWh" rel="noopener">Install with TestFlight</a>
         <a class="chev" href="#features">See it in use</a>
       </div>
-      <p class="fine tf">A beta, through Apple’s free TestFlight app. The App Store release is coming soon.</p>
-      <p class="fine"><strong>Independent and unofficial.</strong> Riviera is not affiliated with, endorsed by, or sponsored by Renault s.a.s. For iPhone with iOS 18 or later. Free, with no ads.</p>
+      <p class="fine tf">Available in beta through Apple’s free TestFlight app. Coming soon to the App Store.</p>
+      <p class="fine"><strong>Independent and unofficial.</strong> Riviera is not affiliated with, endorsed by, or sponsored by Renault s.a.s. For iPhone with iOS 18 or later. Free, with no ads. Screens show a sample car with fictional data.<sup><a href="#fn1" aria-label="Footnote 1">1</a></sup></p>
     </div>
     <figure class="hero-media">
       <div class="crop">
@@ -473,7 +471,6 @@
           </div>
         </div>
       </div>
-      <figcaption>Sample car, fictional data.<sup><a href="#fn1" aria-label="Footnote 1">1</a></sup></figcaption>
     </figure>
   </section>
 
@@ -483,8 +480,8 @@
       <p class="sub rv">Sign in with your own My Renault account, or try the sample car first.</p>
       <ul role="list" class="stats">
         <li><p><span class="num">21</span> <span class="unit">languages</span></p><p class="cap">English plus 20 more.</p></li>
-        <li><p><span class="num">20</span> <span class="unit">currencies</span></p><p class="cap">And your units, miles included.</p></li>
-        <li><p><span class="num">Free</span> <span class="unit">with no ads</span></p><p class="cap">No subscription and no paid features.<sup><a href="#fn2" aria-label="Footnote 2">2</a></sup></p></li>
+        <li><p><span class="num">20</span> <span class="unit">currencies</span></p><p class="cap">Your units too, miles included.</p></li>
+        <li><p><span class="num">Free</span> <span class="unit">with no ads</span></p><p class="cap">No subscription. No paid features.<sup><a href="#fn2" aria-label="Footnote 2">2</a></sup></p></li>
       </ul>
     </div>
   </section>
@@ -493,7 +490,7 @@
     <div class="w t center shead">
       <span id="screens"></span>
       <h2 id="features-h" class="h2 rv">See it in use.</h2>
-      <p class="sub rv rv1">Seven screens from a sample car with fictional figures.<sup><a href="#fn1" aria-label="Footnote 1">1</a></sup></p>
+      <p class="sub rv rv1">Seven screens. One sample car.<sup><a href="#fn1" aria-label="Footnote 1">1</a></sup></p>
     </div>
     <div class="w">
       <div class="story">
@@ -501,15 +498,14 @@
         <div class="chapter">
           <div class="step" id="ch-dashboard">
             <p class="kicker">Dashboard</p>
-            <h3>As Renault reports it.</h3>
-            <p class="txt"><strong>Fuel or battery level, range, odometer and parking location</strong>, and the lock status on the few models that report it. Riviera shows how old a reading is, and you can pull down on the Dashboard to fetch Renault’s latest reading.<sup><a href="#fn3" aria-label="Footnote 3">3</a></sup></p>
+            <h3>The latest readings, as Renault reports them.</h3>
+            <p class="txt"><strong>Fuel or battery level, range, odometer and parking location.</strong> Lock status, on the few models that report it. Riviera shows how old a reading is. Pull down on the Dashboard to ask Renault for the latest reading.<sup><a href="#fn3" aria-label="Footnote 3">3</a></sup></p>
           </div>
           <figure class="phone is-on">
             <div class="body">
               <div class="screen"><img src="img/screens/dashboard-560.webp" srcset="img/screens/dashboard-360.webp 360w, img/screens/dashboard-560.webp 560w, img/screens/dashboard-840.webp 840w" sizes="(min-width:900px) 359px, (min-width:735px) 302px, min(66vw, 283px)" width="560" height="1218" loading="lazy" decoding="async" alt="The Dashboard screen with the sample car."></div>
               <span class="island" aria-hidden="true"></span>
             </div>
-            <figcaption>Sample car, fictional data.</figcaption>
           </figure>
         </div>
 
@@ -517,10 +513,10 @@
           <div class="step" id="ch-controls">
             <p class="kicker">Controls</p>
             <h3>Horn and lights, from your phone.</h3>
-            <p class="txt"><strong>Sound the horn or flash the lights with a tap.</strong> The door lock card shows the last status your car reported, with the time of that report.</p>
+            <p class="txt"><strong>Sound the horn or flash the lights <span class="nb">with a tap.</span></strong> The door lock card shows the last status your car reported, and when.</p>
             <details class="more">
               <summary>Which cars accept horn and lights?</summary>
-              <p>Horn and lights work mainly on cars with OpenR Link, the Android-based touchscreen system in newer Renaults (about 2022 onward), such as the Austral and Mégane E-Tech. Most older Easy Link and R-Link 2 cars refuse the command, and Riviera then says so. Settings › Help &amp; Support › Supported Vehicles shows the system for each model.</p>
+              <p>Mostly cars with OpenR Link, the touchscreen system in newer Renaults (about 2022 onward), such as the Austral and Mégane E-Tech. Most older Easy Link and R-Link 2 cars refuse the command, and Riviera tells you so. Settings › Help &amp; Support › Supported Vehicles shows the system for each model.</p>
             </details>
           </div>
           <figure class="phone">
@@ -528,7 +524,6 @@
               <div class="screen"><img src="img/screens/controls-560.webp" srcset="img/screens/controls-360.webp 360w, img/screens/controls-560.webp 560w, img/screens/controls-840.webp 840w" sizes="(min-width:900px) 359px, (min-width:735px) 302px, min(66vw, 283px)" width="560" height="1218" loading="lazy" decoding="async" alt="Controls screen: sound the horn and flash the lights, with the door lock status below."></div>
               <span class="island" aria-hidden="true"></span>
             </div>
-            <figcaption>Sample car, fictional data.</figcaption>
           </figure>
         </div>
 
@@ -543,7 +538,6 @@
               <div class="screen"><img src="img/screens/lease-560.webp" srcset="img/screens/lease-360.webp 360w, img/screens/lease-560.webp 560w, img/screens/lease-840.webp 840w" sizes="(min-width:900px) 359px, (min-width:735px) 302px, min(66vw, 283px)" width="560" height="1218" loading="lazy" decoding="async" alt="Ownership screen: a ring showing how much of the lease mileage allowance is used, with time progress, days left and a forecast."></div>
               <span class="island" aria-hidden="true"></span>
             </div>
-            <figcaption>Sample car, fictional data.</figcaption>
           </figure>
         </div>
 
@@ -551,14 +545,13 @@
           <div class="step" id="ch-costs">
             <p class="kicker">Costs</p>
             <h3>What the car costs.</h3>
-            <p class="txt">See what the car costs <strong>each month and per kilometre or mile</strong>, with fuel and maintenance next to lease, insurance and inspection.</p>
+            <p class="txt"><strong>Each month, and per kilometre or mile.</strong> Fuel and maintenance, next to lease, insurance and inspection.</p>
           </div>
           <figure class="phone">
             <div class="body">
               <div class="screen"><img src="img/screens/costs-560.webp" srcset="img/screens/costs-360.webp 360w, img/screens/costs-560.webp 560w, img/screens/costs-840.webp 840w" sizes="(min-width:900px) 359px, (min-width:735px) 302px, min(66vw, 283px)" width="560" height="1218" loading="lazy" decoding="async" alt="What the car costs: the monthly cost and the cost per distance, split into lease, insurance, vignette and inspection, fuel and maintenance."></div>
               <span class="island" aria-hidden="true"></span>
             </div>
-            <figcaption>Sample car, fictional data.</figcaption>
           </figure>
         </div>
 
@@ -566,14 +559,13 @@
           <div class="step" id="ch-services">
             <p class="kicker">Services</p>
             <h3>Services, inspection and deadlines.</h3>
-            <p class="txt">A service schedule with due dates, plus inspection (MOT, ITP or similar), insurance, and road tax or toll-sticker (vignette) dates. <strong>Reminders arrive before things fall due</strong>, and service due dates can be added to your Calendar and Reminders with a tap.</p>
+            <p class="txt">A service schedule with due dates. Dates for your inspection (MOT, ITP or similar), insurance, and road tax or vignette. <strong>Riviera reminds you before they fall due.</strong> Add service due dates to Calendar and Reminders <span class="nb">with a tap.</span></p>
           </div>
           <figure class="phone">
             <div class="body">
               <div class="screen"><img src="img/screens/services-560.webp" srcset="img/screens/services-360.webp 360w, img/screens/services-560.webp 560w, img/screens/services-840.webp 840w" sizes="(min-width:900px) 359px, (min-width:735px) 302px, min(66vw, 283px)" width="560" height="1218" loading="lazy" decoding="async" alt="Service Schedule: tyre rotation, brake fluid, filters and other items, with due dates and distance left."></div>
               <span class="island" aria-hidden="true"></span>
             </div>
-            <figcaption>Sample car, fictional data.</figcaption>
           </figure>
         </div>
 
@@ -581,29 +573,27 @@
           <div class="step" id="ch-fuel">
             <p class="kicker">Fuel</p>
             <h3>Fill-ups and consumption.</h3>
-            <p class="txt">Log fill-ups by typing, or by scanning a receipt (it reads Romanian and English receipts best, and you check every field before saving). <strong>Follow consumption and fuel cost over time.</strong></p>
+            <p class="txt">Enter a fill-up, or scan the receipt. The scanner reads Romanian and English receipts best. You check every field before saving. <strong>Follow consumption and fuel cost over time.</strong></p>
           </div>
           <figure class="phone">
             <div class="body">
               <div class="screen"><img src="img/screens/fuel-560.webp" srcset="img/screens/fuel-360.webp 360w, img/screens/fuel-560.webp 560w, img/screens/fuel-840.webp 840w" sizes="(min-width:900px) 359px, (min-width:735px) 302px, min(66vw, 283px)" width="560" height="1218" loading="lazy" decoding="async" alt="Fuel Records: fuel level, range, average consumption, cost per distance and a list of fill-ups."></div>
               <span class="island" aria-hidden="true"></span>
             </div>
-            <figcaption>Sample car, fictional data.</figcaption>
           </figure>
         </div>
 
         <div class="chapter">
           <div class="step" id="ch-widget">
-            <p class="kicker">Home Screen</p>
+            <p class="kicker">Widgets and Siri</p>
             <h3>On your Home Screen.</h3>
-            <p class="txt"><strong>Widgets show your car’s fuel, range and parking location.</strong> Siri and Shortcuts can read your car’s latest data from what is already on your iPhone, without contacting Renault. Some actions, such as flashing the lights or starting climate pre-conditioning, do contact Renault.</p>
+            <p class="txt"><strong>Widgets show your car’s fuel, range and parking location.</strong> Siri and Shortcuts answer from the readings already on your iPhone. Actions such as flashing the lights or starting climate pre-conditioning go through Renault.</p>
           </div>
           <figure class="phone">
             <div class="body">
               <div class="screen"><img src="img/screens/widget-560.webp" srcset="img/screens/widget-360.webp 360w, img/screens/widget-560.webp 560w, img/screens/widget-840.webp 840w" sizes="(min-width:900px) 359px, (min-width:735px) 302px, min(66vw, 283px)" width="560" height="1218" loading="lazy" decoding="async" alt="A Riviera widget on the iPhone Home Screen showing the car’s lock status, fuel level, range and where it is parked."></div>
               <span class="island" aria-hidden="true"></span>
             </div>
-            <figcaption>Sample car, fictional data.</figcaption>
           </figure>
         </div>
 
@@ -621,30 +611,30 @@
             <p class="tag">Around your car</p>
             <h3>Nearby fuel, charging and dealers.</h3>
           </div>
-          <p>Fuel stations around your car, with prices in France, Spain, Austria and Romania, and in Germany with your own free Tankerkönig key.<sup><a href="#fn4" aria-label="Footnote 4">4</a></sup> EV chargers and Renault dealers around your car or your phone, on a map.</p>
+          <p>Fuel stations near your car, with prices in France, Spain, Austria and Romania. In Germany, prices appear with your own free Tankerkönig key.<sup><a href="#fn4" aria-label="Footnote 4">4</a></sup> EV chargers and Renault dealers near your car or your phone, on a map.</p>
         </div>
         <div class="tile b">
           <p class="tag">Plug-in and electric</p>
-          <h3>Climate and charging, where your model accepts them.</h3>
-          <p>On plug-in and electric cars you can start climate pre-conditioning and use the charging controls.</p>
-          <p class="fine">On some newer electric models, such as the Renault 4 and 5, Renault does not accept the charging commands Riviera sends, so charging features there are limited.</p>
+          <h3>Climate and charging.</h3>
+          <p>On plug-in and electric cars, start climate pre-conditioning and use the charging controls.</p>
+          <p class="fine">Features vary by model. On some newer electric models, such as the Renault 4 and 5, Renault does not accept the charging commands Riviera sends, so charging features are limited on those models.</p>
         </div>
         <div class="tile c">
           <p class="tag">Records</p>
           <h3>Repairs, documents, tyre sets and notes.</h3>
-          <p>They stay on your iPhone. Switch on iCloud Sync, save a backup file, or share a car’s records, including its VIN and its lease and credit details, with people you invite in a Shared Garage: everyone you invite can read and change them.</p>
+          <p>They stay on your iPhone. Switch on iCloud Sync or save a backup file. Share a car’s records with people you invite in a Shared Garage, including its VIN and its lease and credit details. Everyone you invite can read and change them.</p>
         </div>
         <!-- RELEASE-DAY: tile D -->
         <div class="tile d">
           <p class="tag">Apple TV</p>
           <h3>A summary on your TV.</h3>
-          <p>An optional Apple TV app, switched on in Settings › Data &amp; Sync, shows a summary of your car on your TV.</p>
-          <p class="fine">Needs tvOS 18 or later.</p>
+          <p>Switch on the optional Apple TV app in <span class="nb">Settings › Data &amp; Sync</span> to see a summary of your car.</p>
+          <p class="fine">Requires tvOS 18 or later.</p>
         </div>
         <div class="tile e">
           <p class="tag">No Renault account yet?</p>
           <h3>Try it with a sample car.</h3>
-          <p>Tap “Try it with a sample car” on the sign-in screen to try the app with a fictional car. No account and no password needed. Records you add in the sample car are not saved.</p>
+          <p>Tap “Try it with a sample car” on the sign-in screen to explore the app with a fictional car. No account, no password. Records you add there are not saved.</p>
         </div>
       </div>
     </div>
@@ -662,9 +652,9 @@
         <li><h3>No server of its own</h3><p>Riviera has <strong>no server of its own, no analytics and no ads</strong>.</p></li>
         <li><h3>Your password</h3><p>Your My Renault password goes <strong>only to Renault’s sign-in service</strong>. Riviera never saves it.</p></li>
         <li><h3>Your records</h3><p>Your records stay on your iPhone, and in the iPhone backups you make, unless you switch on a feature that copies them, such as iCloud Sync, Shared Garage or Apple TV.</p></li>
-        <li><h3>Your location</h3><p>Fuel, charger and dealer searches send a position rounded to about 100 metres to the public services that answer them, and weather lookups about 10 kilometres. Apple Maps and Apple’s address lookup, which Riviera also uses, receive exact coordinates. The policy lists every service.</p></li>
-        <li><h3>Erasing</h3><p>You can erase what Riviera keeps on your iPhone and in your own iCloud from inside the app, without asking the developer. Backups, a Shared Garage you joined and data held by Renault are not touched; the policy lists what remains.</p></li>
-        <li><h3>The developer</h3><p>Riviera itself sends nothing to the developer. What reaches the developer is what you choose to e-mail, plus anonymous crash and usage figures that Apple shares with developers if you allow it in iOS.</p></li>
+        <li><h3>Your location</h3><p>Fuel, charger and dealer searches send a position rounded to about 100 metres to the public services that answer them. Weather lookups send a position rounded to about 10 kilometres. Apple Maps and Apple’s address lookup, which Riviera also uses, receive exact coordinates. The policy lists every service.</p></li>
+        <li><h3>Erasing</h3><p>Erase what Riviera keeps on your iPhone and in your own iCloud from inside the app, without asking the developer. Backups, a Shared Garage you joined and data held by Renault are not touched. The policy lists what remains.</p></li>
+        <li><h3>The developer</h3><p>Riviera itself sends nothing to the developer. What reaches the developer is what you choose to email, plus anonymous crash and usage figures that Apple shares with developers if you allow it in iOS.</p></li>
       </ul>
       <div class="policy center">
         <p class="fine">The short version. The full privacy policy is the one to rely on.</p>
@@ -678,42 +668,42 @@
 
       <section id="know" aria-labelledby="know-h">
         <h2 id="know-h" class="h2">Good to know.</h2>
-        <p class="sub">What Riviera can and cannot show.</p>
+        <p class="sub">What to expect.</p>
         <ul role="list" class="know-grid">
-          <li><h3>Renault cars only.</h3><p>Your car needs to be connected to a My Renault account. What shows depends on your market, model year, connected-services subscription and privacy mode, and Riviera hides the readings your car does not report.</p></li>
-          <li><h3>Readings can arrive late or be missing.</h3><p>They come from Renault’s servers. Riviera is not a safety system, and its deadlines are estimates and reminders, not legal advice.</p></li>
-          <li><h3>Requirements.</h3><p>An iPhone with iOS 18 or later. The optional Apple TV app needs tvOS 18 or later.</p></li>
+          <li><h3>Renault cars only.</h3><p>Your car needs to be connected to a My Renault account. What shows depends on your market, model year, connected-services subscription and privacy mode. Riviera hides the readings your car does not report.</p></li>
+          <li><h3>Readings can arrive late or be missing.</h3><p>They come from Renault’s servers. Riviera is not a safety system. Its deadlines are estimates and reminders, not legal advice.</p></li>
+          <li><h3>Requirements.</h3><p>An iPhone with iOS 18 or later. The optional Apple TV app requires tvOS 18 or later.</p></li>
           <li><h3>Free.</h3><p>No ads, no subscription and no paid features.</p></li>
         </ul>
       </section>
 
       <section id="faq" aria-labelledby="faq-h">
         <h2 id="faq-h" class="h2">Questions.</h2>
-        <p class="sub">The short answers. The full ones are in the app’s Help &amp; Support.</p>
+        <p class="sub">Short answers. More in the app, under Settings › Help &amp; Support.</p>
         <div class="faq">
           <details open>
             <summary>Is Riviera an official Renault app?</summary>
-            <p>No. Riviera is independent and unofficial, and it is not affiliated with, endorsed by, or sponsored by Renault s.a.s. It uses the same sign-in and vehicle-data services as the official My Renault app, with your own account.</p>
+            <p>No. Riviera is independent and unofficial. It is not affiliated with, endorsed by, or sponsored by Renault s.a.s. It uses the same sign-in and vehicle-data services as the official My Renault app, with your own account.</p>
           </details>
           <details>
             <summary>Can Riviera lock or unlock my car?</summary>
-            <p>No. Renault’s service has no such command, so Riviera only shows the last lock status your car reports, with the time of that report. It can sound the horn and flash the lights where Renault allows that for your car.</p>
+            <p>No. Renault’s service has no such command. Riviera shows only the last lock status your car reported, with the time of that report. It can sound the horn and flash the lights where Renault allows that for your car.</p>
           </details>
           <details>
             <summary>What happens to my password?</summary>
-            <p>Riviera is not Renault’s own app, so you type your My Renault password into a third-party app. You type it only on Riviera’s sign-in screen, it is sent only to Renault’s sign-in service, and Riviera does not save it. Riviera keeps Renault’s sign-in token, your e-mail address and your account IDs, among a few other items listed in the privacy policy, in the iOS Keychain on your iPhone. iOS itself may offer to save the password in your own password manager; that is your choice.</p>
+            <p>Riviera is not Renault’s own app, so you type your My Renault password into a third-party app. You type it only on Riviera’s sign-in screen. It goes only to Renault’s sign-in service, and Riviera does not save it. Riviera keeps Renault’s sign-in token, your email address and your account IDs, among a few other items listed in the privacy policy, in the iOS Keychain on your iPhone. iOS itself may offer to save the password in your own password manager. That is your choice.</p>
           </details>
           <details>
             <summary>Why doesn’t my car’s data update every minute?</summary>
-            <p>Riviera reads your car through Renault’s servers, which limit how often an account may ask, and the car needs a mobile signal. Pulling down on the Dashboard asks Renault for the latest reading, at most once every 30 seconds.</p>
+            <p>Riviera reads your car through Renault’s servers, which limit how often an account may ask. The car also needs a mobile signal. Pulling down on the Dashboard asks Renault for the latest reading, at most once every 30 seconds.</p>
           </details>
           <details>
-            <summary>Which cars does it work with?</summary>
-            <p>Renault cars that appear in your My Renault account. Not every feature exists on every model: climate and charging controls need a plug-in or electric car, and on some newer electric models, such as the Renault 4 and 5, Renault does not accept the charging commands Riviera sends, so charging features there are limited. Some markets have no connected services at all.</p>
+            <summary>Which cars does Riviera work with?</summary>
+            <p>Renault cars that appear in your My Renault account. Features vary by model. Climate and charging controls need a plug-in or electric car. On some newer electric models, such as the Renault 4 and 5, Renault does not accept the charging commands Riviera sends, so charging features are limited on those models. Some markets have no connected services at all.</p>
           </details>
           <details>
-            <summary>What does it cost?</summary>
-            <p>Riviera itself costs nothing: no ads, no subscription and no paid features. Renault’s connected services are separate and may have their own terms.</p>
+            <summary>What does Riviera cost?</summary>
+            <p>Riviera is free: no ads, no subscription and no paid features. Renault’s connected services are separate and may have their own terms.</p>
           </details>
         </div>
       </section>
@@ -721,10 +711,10 @@
       <section id="contact" aria-labelledby="contact-h">
         <h2 id="contact-h" class="h2">Contact.</h2>
         <div class="contact-body">
-          <p>Questions, bug reports or ideas? Write in English or Romanian. I read every message and reply as soon as I can.</p>
+          <p>Questions, bug reports or ideas? Write in English or Romanian. The developer reads every message and replies as soon as possible.</p>
           <p><a class="mail" href="mailto:riviera.appsupport@icloud.com">riviera.appsupport@icloud.com</a></p>
           <p>In the app: Settings › Help &amp; Support › Report a Problem. You see the redacted diagnostics before anything is sent.</p>
-          <p>Riviera is made and published by Ionuț Andrei Paraschiv, Romania. I cannot help with your My Renault account, your car or its subscription: for those, contact Renault or your dealer.</p>
+          <p>Riviera is made and published by Ionuț Andrei Paraschiv, Romania. For questions about your My Renault account, your car or its subscription, contact Renault or your dealer.</p>
         </div>
       </section>
 
@@ -755,14 +745,14 @@
     </div>
     <ol class="notes">
       <li id="fn1">Screens use a sample car with fictional figures, shown in English, with kilometres and euros. Riviera follows your language, units (miles included) and currency. Once you sign in, Riviera shows your own car’s name and picture. The app’s built-in sample car is named “Sample car” and shown as a plain car silhouette.</li>
-      <li id="fn2">Riviera itself costs nothing: no ads, no subscription and no paid features. Renault’s connected services are separate and may have their own terms.</li>
+      <li id="fn2">Riviera is free: no ads, no subscription and no paid features. Renault’s connected services are separate and may have their own terms.</li>
       <li id="fn3">Readings come from Renault’s servers and can arrive late or be missing. What shows depends on your market, model year, connected-services subscription and privacy mode. Pulling down on the Dashboard asks Renault for the latest reading, at most once every 30 seconds.</li>
-      <li id="fn4">Elsewhere you see station locations without prices; Italy’s price files are read too, but not verified yet.</li>
+      <li id="fn4">Elsewhere, station locations appear without prices. Prices in Italy are read too, but not yet verified.</li>
     </ol>
     <div class="legal">
       <p>Riviera is an independent app. It is not affiliated with, endorsed by, or sponsored by Renault s.a.s. The sample car in the screenshots is shown with a picture of a Renault Austral. Renault and Austral are trademarks of Renault s.a.s., used here only to say which cars Riviera works with. Other product and company names are trademarks of their owners. Apple, iPhone, iCloud, Apple TV, Apple Maps, Shortcuts, Siri and TestFlight are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc. Riviera is not made by, affiliated with, or endorsed by Apple Inc.</p>
       <p>Data credits: fuel prices in Germany from <a href="https://creativecommons.tankerkoenig.de">Tankerkönig</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>) when you add your own free key; in Romania from <a href="https://monitorulpreturilor.info/">Monitorul Prețurilor Carburanților</a> (Consiliul Concurenței); in France from prix-carburants.gouv.fr (Ministère de l’Économie, Licence Ouverte 2.0); in Spain from geoportalgasolineras.es (Ministerio para la Transición Ecológica); in Austria from the E-Control Spritpreisrechner; in Italy from the Osservatorio Prezzi Carburanti (Ministero delle Imprese e del Made in Italy). Charger data from <a href="https://openchargemap.org">Open Charge Map</a> contributors (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>). Station, charger and dealer locations © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a> (ODbL). Weather data by <a href="https://open-meteo.com">Open-Meteo.com</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>). Maps in the app: Apple Maps.</p>
-      <p>© 2026 Ionuț Andrei Paraschiv · Last updated 16 November 2026</p>
+      <p>© 2026 Ionuț Andrei Paraschiv · Last updated 17 November 2026</p>
     </div>
   </div>
 </footer>
